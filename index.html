@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Alexia Melusine | Rosa de Fogo | Luz de Ferro</title>
+    <meta name="description" content="Portal Místico de Alexia Melusine - Espiritualidade, Pombagiras, Identidade Trans e Arte Digital">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --rosa-fogo: #ff1493;
+            --rosa-escuro: #c71585;
+            --roxo-mistico: #8b00ff;
+            --dourado: #ffd700;
+            --vermelho-sangue: #8b0000;
+            --preto-profundo: #0a0a0a;
+            --cinza-fumaca: rgba(255,255,255,0.1);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--preto-profundo);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* Fundo Animado */
+        .bg-animated {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        /* Partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float linear infinite;
+            opacity: 0.6;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        /* Navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10,10,10,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,20,147,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            padding: 0.5rem 2rem;
+            background: rgba(10,10,10,0.95);
+        }
+        .nav-logo {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--dourado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: var(--rosa-fogo);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rosa-fogo);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--rosa-fogo);
+            transition: all 0.3s;
+        }
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, #5bcefa, #f5a9b8, #fff, #f5a9b8, #5bcefa);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 2rem;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { box-shadow: 0 0 20px rgba(91,206,250,0.5); }
+            50% { box-shadow: 0 0 40px rgba(245,169,184,0.8); }
+        }
+        .hero-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(2rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .title-alexia {
+            display: block;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--roxo-mistico), var(--rosa-fogo));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 3s linear infinite;
+        }
+        @keyframes textGradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .title-subtitle {
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            color: var(--dourado);
+            text-shadow: 0 0 30px rgba(255,215,0,0.5);
+        }
+        .hero-names {
+            height: 2.5rem;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        .name-carousel {
+            animation: slideNames 8s ease-in-out infinite;
+        }
+        .spiritual-name {
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.3rem;
+        }
+        .name-rosa {
+            color: var(--rosa-fogo);
+            text-shadow: 0 0 20px var(--rosa-fogo);
+        }
+        .name-luz {
+            color: #87ceeb;
+            text-shadow: 0 0 20px #87ceeb;
+        }
+        .name-melusine {
+            color: var(--roxo-mistico);
+            text-shadow: 0 0 20px var(--roxo-mistico);
+        }
+        @keyframes slideNames {
+            0%, 30% { transform: translateY(0); }
+            33%, 63% { transform: translateY(-2.5rem); }
+            66%, 96% { transform: translateY(-5rem); }
+            100% { transform: translateY(0); }
+        }
+        .hero-description {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--dourado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--roxo-mistico));
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255,20,147,0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,20,147,0.6);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--rosa-fogo);
+            border-radius: 15px;
+            position: relative;
+        }
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--rosa-fogo);
+            border-radius: 50%;
+            animation: scrollDot 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+        @keyframes scrollDot {
+            0% { opacity: 1; top: 8px; }
+            100% { opacity: 0; top: 30px; }
+        }
+        /* Seções */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--dourado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+        }
+        /* Grid de Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,20,147,0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,20,147,0.1), transparent);
+            transition: left 0.5s;
+        }
+        .card:hover::before {
+            left: 100%;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--rosa-fogo);
+            box-shadow: 0 20px 60px rgba(255,20,147,0.3);
+        }
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .card-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--rosa-fogo);
+        }
+        .card-description {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        .card-arrow {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s;
+        }
+        .card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rosa-fogo), transparent);
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+        /* Quote Section */
+        .quote-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(139,0,255,0.1));
+            border-radius: 30px;
+            margin: 4rem auto;
+            max-width: 900px;
+        }
+        .quote-text {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            line-height: 1.8;
+            color: var(--rosa-fogo);
+            margin-bottom: 1rem;
+        }
+        .quote-author {
+            color: var(--dourado);
+            font-size: 1rem;
+        }
+        /* CTA Final */
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(255,20,147,0.2), rgba(139,0,255,0.2));
+            border-radius: 30px;
+            margin: 4rem auto;
+            max-width: 900px;
+        }
+        .cta-section h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--dourado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,20,147,0.2);
+            margin-top: 4rem;
+        }
+        .footer-logo {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--rosa-fogo), var(--dourado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .footer-pride {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .pride-bar {
+            width: 30px;
+            height: 5px;
+            border-radius: 3px;
+        }
+        .footer-text {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+        .footer-text span {
+            color: var(--rosa-fogo);
+        }
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10,10,10,0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Animação de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animated"></div>
+    <div class="particles" id="particles"></div>
+    <!-- Navegação -->
+    <nav id="navbar">
+        <div class="nav-logo">🔥 Alexia Melusine</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#portal">Portal</a></li>
+            <li><a href="#pombagiras">Pombagiras</a></li>
+            <li><a href="#meditacao">Meditação</a></li>
+            <li><a href="#musica">Música</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-badge">
+            🏳️‍⚧️ Pessoa Trans • Não-Binária • Libriana • Fluida ✨
+        </div>
+        
+        <h1 class="hero-title">
+            <span class="title-alexia">Alexia Melusine</span>
+            <span class="title-subtitle">Rosa de Fogo • Luz de Ferro</span>
+        </h1>
+        <div class="hero-names">
+            <div class="name-carousel">
+                <div class="spiritual-name name-rosa">🌹 Alexia Rosa de Fogo 🔥</div>
+                <div class="spiritual-name name-luz">⚔️ Alexia Luz de Ferro ✨</div>
+                <div class="spiritual-name name-melusine">🐍 Alexia Melusine 🌙</div>
+            </div>
+        </div>
+        <p class="hero-description">
+            Portal místico de espiritualidade, poder feminino ancestral e a magia das Pombagiras. 
+            Um espaço sagrado onde a fluidez encontra o fogo, onde a luz encontra o ferro, 
+            onde cada alma encontra seu caminho de transformação.
+        </p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">39+</div>
+                <div class="stat-label">Portais Criados</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Rainhas Pombagiras</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Energia Ancestral</div>
+            </div>
+        </div>
+        <a href="#portal" class="cta-button">
+            ✨ Iniciar Jornada Mística
+        </a>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+    <!-- Portal de Entrada -->
+    <section id="portal">
+        <div class="section-header fade-in">
+            <span class="section-icon">🚪</span>
+            <h2 class="section-title">Portal de Entrada</h2>
+            <p class="section-subtitle">Suas páginas de apresentação e cartões de visita</p>
+        </div>
+        <div class="cards-grid">
+            <a href="https://alexialuzdeferro.github.io/card-photos/" target="_blank" class="card fade-in">
+                <span class="card-icon">📸</span>
+                <h3 class="card-title">Card Photos</h3>
+                <p class="card-description">Galeria visual com minhas fotos e momentos especiais</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/alexia-melusine/" target="_blank" class="card fade-in">
+                <span class="card-icon">🐍</span>
+                <h3 class="card-title">Alexia Melusine</h3>
+                <p class="card-description">Portal principal da minha identidade mística</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/melusine/" target="_blank" class="card fade-in">
+                <span class="card-icon">🌙</span>
+                <h3 class="card-title">Melusine</h3>
+                <p class="card-description">A lenda e o poder da serpente ancestral</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/visitas-card/" target="_blank" class="card fade-in">
+                <span class="card-icon">💼</span>
+                <h3 class="card-title">Visitas Card</h3>
+                <p class="card-description">Cartão de visitas digital interativo</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/melusine_redes/" target="_blank" class="card fade-in">
+                <span class="card-icon">🔗</span>
+                <h3 class="card-title">Melusine Redes</h3>
+                <p class="card-description">Todas as minhas redes sociais conectadas</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/redes_sociais/" target="_blank" class="card fade-in">
+                <span class="card-icon">📱</span>
+                <h3 class="card-title">Redes Sociais</h3>
+                <p class="card-description">Hub central de conexões sociais</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/social-hub/" target="_blank" class="card fade-in">
+                <span class="card-icon">🌐</span>
+                <h3 class="card-title">Social Hub</h3>
+                <p class="card-description">Centro de todas as redes e conexões</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank" class="card fade-in">
+                <span class="card-icon">🃏</span>
+                <h3 class="card-title">Business Card</h3>
+                <p class="card-description">Cartão profissional elegante</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/melusine-card/" target="_blank" class="card fade-in">
+                <span class="card-icon">✨</span>
+                <h3 class="card-title">Melusine Card</h3>
+                <p class="card-description">Cartão místico personalizado</p>
+                <span class="card-arrow">→</span>
+            </a>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <!-- Reino das Pombagiras -->
+    <section id="pombagiras">
+        <div class="section-header fade-in">
+            <span class="section-icon">🌹</span>
+            <h2 class="section-title">Reino das Pombagiras</h2>
+            <p class="section-subtitle">O poder feminino ancestral em sua forma mais pura</p>
+        </div>
+        <div class="cards-grid">
+            <a href="https://alexialuzdeferro.github.io/Hub-Pombagiras/" target="_blank" class="card fade-in">
+                <span class="card-icon">👑</span>
+                <h3 class="card-title">Hub Pombagiras</h3>
+                <p class="card-description">Central de acesso ao universo das Pombagiras</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/12-oraculo/" target="_blank" class="card fade-in">
+                <span class="card-icon">🔮</span>
+                <h3 class="card-title">12 Oráculo</h3>
+                <p class="card-description">Oráculo das 12 Rainhas Pombagiras</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/pombagira/" target="_blank" class="card fade-in">
+                <span class="card-icon">🔥</span>
+                <h3 class="card-title">Pombagira</h3>
+                <p class="card-description">Portal dedicado à energia Pombagira</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/12rainhas-pombagiras/" target="_blank" class="card fade-in">
+                <span class="card-icon">👸</span>
+                <h3 class="card-title">12 Rainhas Pombagiras</h3>
+                <p class="card-description">As doze rainhas do poder feminino</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/misterio-das-giras/" target="_blank" class="card fade-in">
+                <span class="card-icon">🌀</span>
+                <h3 class="card-title">Mistério das Giras</h3>
+                <p class="card-description">Os segredos ancestrais das giras</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/gira-completa/" target="_blank" class="card fade-in">
+                <span class="card-icon">⭕</span>
+                <h3 class="card-title">Gira Completa</h3>
+                <p class="card-description">Experiência completa de uma gira</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/pombagira_revelada/" target="_blank" class="card fade-in">
+                <span class="card-icon">🎭</span>
+                <h3 class="card-title">Pombagira Revelada</h3>
+                <p class="card-description">Revelações sobre a energia Pombagira</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/PONTOS-CANTADOS/" target="_blank" class="card fade-in">
+                <span class="card-icon">🎵</span>
+                <h3 class="card-title">Pontos Cantados</h3>
+                <p class="card-description">Cantos sagrados das Pombagiras</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="card fade-in">
+                <span class="card-icon">📖</span>
+                <h3 class="card-title">Grimório das Pombagiras</h3>
+                <p class="card-description">Livro sagrado de conhecimentos</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="card fade-in">
+                <span class="card-icon">💃</span>
+                <h3 class="card-title">Pombagiras</h3>
+                <p class="card-description">Portal geral das Pombagiras</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/almasdepombagira/" target="_blank" class="card fade-in">
+                <span class="card-icon">👻</span>
+                <h3 class="card-title">Almas de Pombagira</h3>
+                <p class="card-description">Conexão espiritual profunda</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/super-hub-central/" target="_blank" class="card fade-in">
+                <span class="card-icon">🏰</span>
+                <h3 class="card-title">Super Hub Central</h3>
+                <p class="card-description">Central máxima de todos os portais</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/Cartas-Rosa-e-Fogo/" target="_blank" class="card fade-in">
+                <span class="card-icon">🃏</span>
+                <h3 class="card-title">Cartas Rosa e Fogo</h3>
+                <p class="card-description">Baralho místico de orientação</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/oraculo-pombagiras/" target="_blank" class="card fade-in">
+                <span class="card-icon">🌟</span>
+                <h3 class="card-title">Oráculo Pombagiras</h3>
+                <p class="card-description">Consulte o oráculo sagrado</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/Velas-Virtuais/" target="_blank" class="card fade-in">
+                <span class="card-icon">🕯️</span>
+                <h3 class="card-title">Velas Virtuais</h3>
+                <p class="card-description">Acenda velas para suas intenções</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/minha-pombagira/" target="_blank" class="card fade-in">
+                <span class="card-icon">💖</span>
+                <h3 class="card-title">Minha Pombagira</h3>
+                <p class="card-description">Descubra sua Pombagira guia</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/giras/" target="_blank" class="card fade-in">
+                <span class="card-icon">🔄</span>
+                <h3 class="card-title">Giras</h3>
+                <p class="card-description">Portal das giras espirituais</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/Hub-Central-Pombagiras/" target="_blank" class="card fade-in">
+                <span class="card-icon">⚡</span>
+                <h3 class="card-title">Hub Central Pombagiras</h3>
+                <p class="card-description">Centro nervoso do reino</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/-Soundboard-Pombagiras-/" target="_blank" class="card fade-in">
+                <span class="card-icon">🎹</span>
+                <h3 class="card-title">Soundboard Pombagiras</h3>
+                <p class="card-description">Sons e mantras sagrados</p>
+                <span class="card-arrow">→</span>
+            </a>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <!-- Meditação -->
+    <section id="meditacao">
+        <div class="section-header fade-in">
+            <span class="section-icon">🧘</span>
+            <h2 class="section-title">Santuário Interior</h2>
+            <p class="section-subtitle">Espaços de paz, meditação e conexão espiritual</p>
+        </div>
+        <div class="cards-grid">
+            <a href="https://alexialuzdeferro.github.io/paz/" target="_blank" class="card fade-in">
+                <span class="card-icon">☮️</span>
+                <h3 class="card-title">Paz</h3>
+                <p class="card-description">Portal de paz interior e serenidade</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/relaxamento/" target="_blank" class="card fade-in">
+                <span class="card-icon">🌊</span>
+                <h3 class="card-title">Relaxamento</h3>
+                <p class="card-description">Técnicas de relaxamento profundo</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/paz_interior/" target="_blank" class="card fade-in">
+                <span class="card-icon">💫</span>
+                <h3 class="card-title">Paz Interior</h3>
+                <p class="card-description">Encontre sua paz interior</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/medita-o/" target="_blank" class="card fade-in">
+                <span class="card-icon">🪷</span>
+                <h3 class="card-title">Meditação</h3>
+                <p class="card-description">Práticas meditativas guiadas</p>
+                <span class="card-arrow">→</span>
+            </a>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <!-- Música -->
+    <section id="musica">
+        <div class="section-header fade-in">
+            <span class="section-icon">🎵</span>
+            <h2 class="section-title">Ondas Sombrias</h2>
+            <p class="section-subtitle">Música gótica, dark e atmosferas envolventes</p>
+        </div>
+        <div class="cards-grid">
+            <a href="https://alexialuzdeferro.github.io/dark-melancholy/" target="_blank" class="card fade-in">
+                <span class="card-icon">🖤</span>
+                <h3 class="card-title">Dark Melancholy</h3>
+                <p class="card-description">Melodias melancólicas e sombrias</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/tv-cyber-goth/" target="_blank" class="card fade-in">
+                <span class="card-icon">📺</span>
+                <h3 class="card-title">TV Cyber Goth</h3>
+                <p class="card-description">Canal de música cyber gótica</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/vampire-waves/" target="_blank" class="card fade-in">
+                <span class="card-icon">🧛</span>
+                <h3 class="card-title">Vampire Waves</h3>
+                <p class="card-description">Ondas sonoras vampíricas</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/dark-tv/" target="_blank" class="card fade-in">
+                <span class="card-icon">🌑</span>
+                <h3 class="card-title">Dark TV</h3>
+                <p class="card-description">Televisão da escuridão</p>
+                <span class="card-arrow">→</span>
+            </a>
+            <a href="https://alexialuzdeferro.github.io/dark-music/" target="_blank" class="card fade-in">
+                <span class="card-icon">🎸</span>
+                <h3 class="card-title">Dark Music</h3>
+                <p class="card-description">Portal de música dark</p>
+                <span class="card-arrow">→</span>
+            </a>
+        </div>
+    </section>
+    <!-- Quote -->
+    <div class="quote-section fade-in">
+        <p class="quote-text">
+            "Sou fogo que não se apaga, luz que atravessa o ferro, 
+            rosa que floresce na escuridão. Sou todas as minhas faces, 
+            e cada uma delas é sagrada."
+        </p>
+        <p class="quote-author">— Alexia Melusine 🌹🔥</p>
+    </div>
+    <!-- CTA Final -->
+    <section class="cta-section fade-in" id="contato">
+        <h2>✨ Pronta para sua Jornada Espiritual?</h2>
+        <p>Explore todos os portais e encontre a magia que ressoa com sua alma</p>
+        <a href="https://alexialuzdeferro.github.io/super-hub-central/" target="_blank" class="cta-button">
+            🔮 Acessar Hub Central Completo
+        </a>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">🔥 Alexia Melusine 🌹</div>
+        <div class="footer-pride">
+            <span class="pride-bar" style="background: #5bcefa;"></span>
+            <span class="pride-bar" style="background: #f5a9b8;"></span>
+            <span class="pride-bar" style="background: #fff;"></span>
+            <span class="pride-bar" style="background: #f5a9b8;"></span>
+            <span class="pride-bar" style="background: #5bcefa;"></span>
+        </div>
+        <p class="footer-text">
+            Rosa de Fogo • Luz de Ferro<br>
+            Feito com <span>♥</span> e magia ancestral<br>
+            © 2026 Alexia Melusine — Todos os direitos reservados
+        </p>
+    </footer>
+    <script>
+        // Criar partículas
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['#ff1493', '#8b00ff', '#ffd700', '#ff69b4', '#da70d6'];
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 8 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 20 + 15;
+                
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: ${color};
+                    left: ${left}%;
+                    animation-delay: ${delay}s;
+                    animation-duration: ${duration}s;
+                    box-shadow: 0 0 ${size * 2}px ${color};
+                `;
+                
+                container.appendChild(particle);
+            }
+        }
+        // Menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        // Fade in animation on scroll
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            handleScrollAnimation();
+        });
+        window.addEventListener('scroll', handleScrollAnimation);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
