@@ -17,7 +17,7 @@
 
 **Portal Místico Central** | **39+ Criações Digitais** | **Tendências 2026**
 
-[🌹 Acessar Portal](bio.site/AlmasdePombagira) · [📱 Redes Sociais](https://alexialuzdeferro.github.io/melusine_redes/) · [🔮 Oráculos](https://linktr.ee/alexiarosadefogo/)
+[🌹 Acessar Portal](https://bio.site/AlmasdePombagira) · [📱 Redes Sociais](https://alexialuzdeferro.github.io/melusine_redes/) · [🔮 Oráculos](https://linktr.ee/alexiarosadefogo/)
 
 </div>
 
